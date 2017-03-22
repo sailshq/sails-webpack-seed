@@ -1,0 +1,38 @@
+{
+  "name": "sails-webpack-seed",
+  "private": true,
+  "version": "0.0.0",
+  "description": "a Sails application",
+  "keywords": [],
+  "dependencies": {
+    "async": "2.0.1",
+    "lodash": "3.10.1",
+    "sails": "^1.0.0-32",
+    "sails-hook-orm": "^2.0.0-0",
+    "sails-hook-sockets": "^1.0.1",
+    "webpack": "2.2.1"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "0.1.16",
+    "copy-webpack-plugin": "4.0.1",
+    "css-loader": "0.27.3",
+    "ejs-loader": "0.3.0",
+    "extract-text-webpack-plugin": "2.1.0",
+    "less": "2.7.2",
+    "less-loader": "4.0.1",
+    "sails.io.js": "1.1.9",
+    "socket.io-client": "1.7.3"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "test": "echo && echo \"* * * * * * * * * * * * * * * * * * * * * * * * * * * \" && echo \"About to run tests...\" && echo && if ! node ./node_modules/mocha/bin/mocha --timeout 10000 ; then echo && echo && echo \"- - -\" && echo \"Looks like something went wrong.\" && echo \"|  If you are not sure what to do next, try:\" && echo \"|  npm install mocha --save-dev\" && echo \"|  \" && echo \"|  And then:\" && echo \"|  mkdir test/\" && echo ; fi",
+    "debug": "node debug app.js"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/scottmac/sails-webpack-seed.git"
+  },
+  "author": "scottmac",
+  "license": ""
+}
