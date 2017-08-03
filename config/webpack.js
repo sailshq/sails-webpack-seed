@@ -18,6 +18,12 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
  */
 
 module.exports.webpack = {
+  /***************************************************************************
+  *                                                                          *
+  * Allow source-mapping if not production mode                              *
+  *                                                                          *
+  ***************************************************************************/
+  devtool: process.env.NODE_ENV === 'production' ? '' : 'source-map',
 
   /***************************************************************************
   *                                                                          *
@@ -49,7 +55,7 @@ module.exports.webpack = {
   ***************************************************************************/
   module: {
     rules: [
-      // Extract less files
+      // Extract css files
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({ use: 'css-loader' })
@@ -58,6 +64,24 @@ module.exports.webpack = {
       {
         test: /\.less$/,
         loader: ExtractTextPlugin.extract({ use: 'css-loader!less-loader' })
+      },
+      // Extract sass files
+      {
+        test: /\.(sass|scss)$/,
+        loader: ExtractTextPlugin.extract({ use: 'css-loader?sourceMap!sass-loader?sourceMap' })
+      },
+      // For ExtractTextPlugin images need to be moved if used in styles for background etc
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+            context: 'assets/images',
+            outputPath: 'images/',
+            publicPath: '../'
+          }
+        }]
       }
     ],
   },

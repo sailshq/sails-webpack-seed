@@ -375,7 +375,7 @@ module.exports = {
 
       // This plugin cleans out your .tmp/public folder before lifting.
       new CleanWebpackPlugin(['public'], {
-        root: path.resolve(__dirname, '..', '.tmp'),
+        root: path.resolve(__dirname, '..', '..', '.tmp'),
         verbose: true,
         dry: false
       }),
@@ -386,11 +386,11 @@ module.exports = {
       new CopyWebpackPlugin([
         {
           from: './assets/images',
-          to: path.resolve(__dirname, '..', '.tmp', 'public', 'images')
+          to: path.resolve(__dirname, '..', '..', '.tmp', 'public', 'images')
         },
         {
           from: './assets/fonts',
-          to: path.resolve(__dirname, '..', '.tmp', 'public', 'fonts')
+          to: path.resolve(__dirname, '..', '..', '.tmp', 'public', 'fonts')
         }
       ]),
 
