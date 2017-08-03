@@ -18,9 +18,12 @@
     "css-loader": "0.27.3",
     "ejs-loader": "0.3.0",
     "extract-text-webpack-plugin": "2.1.0",
+    "file-loader": "^0.11.2",
     "less": "2.7.2",
     "less-loader": "4.0.1",
+    "node-sass": "^4.5.3",
     "sails.io.js": "1.1.9",
+    "sass-loader": "^6.0.6",
     "socket.io-client": "1.7.3"
   },
   "scripts": {
